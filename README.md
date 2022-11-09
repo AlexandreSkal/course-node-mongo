@@ -1,2 +1,5 @@
 # JS_learn
- Lessons about Javascript
+Different learnings about Javascript
+
+## Cinema Microservice
+[All leranings about this project](docs/CONTRIBUTING.md)
