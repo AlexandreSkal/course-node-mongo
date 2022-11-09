@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title>
+        <%=title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>
+        <%=title %>
+    </h1>
+    <p> Fill in all the fields below to register a new customer </p>
+    <form action="/new" , method="POST">
+        <fieldset>
+            <legend>Registration Data</legend>
+            <p>
+                Name: <input type="text" , name="name" , value="<%= customer.name %> ">
+            </p>
+            <p>
+                Age: <input type="number" , name="age" , value=<%=customer.age %>>
+            </p>
+            <p>
+                
+                <select id="city" name="city" onclick="">
+                    <option>Select your City</option>
+                </select>
+                <select id="uf" name="uf" onchange="">
+                    <option>Select your State</option>
+                </select>
+            </p>
+            <input type="hidden" name="id" , value=<%=customer._id %>>
+            <p>
+                <input type="submit" value="Save">
+                <a href="/">Cancel</a>
+            </p>
+
+        </fieldset>
+    </form>
+    <script>
+        fetch("https://servicodados.ibge.gov.br/api/v1/localidades/estados")
+            .then(response => response.json())
+            .then(json => {
+                const ufsHtml = document.getElementById("uf");
+                const siglas = json.map(item => item.sigla).sort();
+                siglas.forEach(item => {
+                    const opt = document.createElement("option");
+                    opt.innerText = item;
+                    ufsHtml.add(opt)
+                })
+                    <% 
+            if(customer.uf){
+                %>
+                        ufsHtml.value = "<%= customer.uf %>"; 
+                <%
+            }
+        %> 
+        })
+            .catch(error => alert(error))
+        
+        const ufsHtml = document.getElementById("uf")
+        const state = ufsHtml.value == "Select your State" ? "SP" : ufsHtml
+        fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${state}/municipios`)
+        .then(response => response.json())
+        .then(json => {
+            const citiesHtml = document.getElementById("city")
+            const cities = json.map(item => item.nome).sort();
+            cities.forEach(item => {
+                const opt = document.createElement("option");
+                    opt.innerText = item;
+                    citiesHtml.add(opt)
+            })
+            <% 
+            if(customer.city){
+                %>
+                citiesHtml.value = "<%= customer.city %>"; 
+                <%
+            }
+        %> 
+        })
+        .catch(error => alert(error))
+        if (window.location.search) {
+            const error = window.location.search.split('=')[1];
+            alert(decodeURI(error));
+        }
+    </script>
+</body>
+
+</html>
