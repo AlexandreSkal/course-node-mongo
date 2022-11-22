@@ -12,7 +12,7 @@ Supertest to complement the tests
 joi to ensure the integrity of submitted data
 helmet for prevention of most known attacks
 
-#cinemaCatalogService
+# cinemaCatalogService
 
 Microsserviços com diversas rotas para consulta de cidades e cinemas com filmes disponíveis. 
 Este microserviço possui um middleware de validação utilizando o jwt
@@ -23,7 +23,7 @@ Todo o microserviço possui testes utilizando o jest
 This microservice has routes to search for registered films, it is also possible to insert and delete new films.
 It has all the features of the microservices mentioned above.
 
-#tools
+# tools
 To use this project you can user Postman to simplify your tests.
 Each Microservice has your its own Database, but to simpplify we can create all Collections in the same database (Just configure .env correctly).
 
