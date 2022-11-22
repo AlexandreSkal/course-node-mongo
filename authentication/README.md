@@ -1,4 +1,5 @@
 # FrontEnd
+##Bootstrap
 This is some screens from this application
 
 LoginScreen:<br>
@@ -10,6 +11,9 @@ SignupScreen:<br>
 ManageScreen:<br>
 ![image](https://user-images.githubusercontent.com/60991421/203365209-1e17bc5a-7769-4159-a8e4-16e6ab013408.png)
 
+
+# Backend
+## Node.js and Express
 The application was developed using the passport module to define an authentication strategy. I used the bcrypt module to ensure unilateral encryption of the password and all information is saved in MongoDB.
 We have a middleware that validates the user's permission level to allow access to some pages.
 Nodemailer was used to notify the user via email when registering or when requesting a new password.
