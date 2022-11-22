@@ -1,4 +1,4 @@
-# JS_learn
+# Course Node.js and MongoDB
 Different learnings about Javascript
 
 ## 1.Cinema Microservice
