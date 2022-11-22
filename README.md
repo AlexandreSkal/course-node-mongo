@@ -12,8 +12,11 @@ __Summary__:
 
 ## 2.Authentication
 __Summary__:
+  This application is a login screen using authenticationMiddlewares in your routes and there are many features in backend like:
+  bcrypt, nodemailer, passport-local and others.
+  The database used was MongoDB and in frontEnd was used Bootstrap
 
-[All leranings about this project](/cinemaMicroservice/README.md)
+[All leranings about this project](/authentication/README.md)
 
 
 
