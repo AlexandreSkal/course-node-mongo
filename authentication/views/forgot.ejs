@@ -1,0 +1,16 @@
+<%- include top.ejs %>
+
+<div class="col-sm-6">
+    <form action="/users/forgot" method="post">
+        <div class="mb-3">
+            <label for="email" class="form-label">Digite o email cadastrado para recuperar a senha:</label>    
+            <input id="email" name="email" type="text" class="form-control" placeholder="Digite seu Email">
+        </div>
+        <input type="submit" value="Send" class="btn btn-primary">
+    </form>
+</div>
+<hr>
+    <p>
+        Caso não possua cadastro <a href="/users/signup">Clique aqui</a>,
+    </p>
+    <%- include bottom.ejs %>
